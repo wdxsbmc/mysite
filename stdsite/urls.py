@@ -17,10 +17,24 @@ from django.contrib import admin
 from django.urls import include, path
 from silo.views import *
 
+from django.conf.urls import url,include
+from django.contrib import admin
+from silo import urls
+import silo
+
+urlpatterns = [
+        url(r'^admin/', admin.site.urls),
+        url(r'',include(silo.urls)),
+
+]
+
+
+'''
 urlpatterns = [
     path('silo/', include('silo.urls')),
-    path('admin/', admin.site.urls),
+   # path('admin/', admin.site.urls),
 ]
+'''
 '''
 urlpatterns = [
     path('admin/', admin.site.urls),
